@@ -1,0 +1,32 @@
+.nuevo {
+  color: #938bee;
+  border: solid #7066e0 1px;
+  border-radius: 7px;
+}
+.nuevo:hover {
+  color: #f5f5f5;
+  background-color: #302e7a;
+  border-radius: 7px;
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  flex-basis: 5%;
+}
+.img-responsive {
+  max-width: 100%;
+}
+
+@media (max-width: 766px) {
+  .nav {
+    display: none;
+  }
+  .nav-wrapper {
+    justify-content: center;
+  }
+  .logo {
+    flex-basis: 10%;
+  }
+}

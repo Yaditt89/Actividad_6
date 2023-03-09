@@ -1,0 +1,21 @@
+.custom-pagination ::ng-deep .ngx-pagination .current {
+  background: #605cca;
+  border-radius: 10%;
+}
+.custom-pagination ::ng-deep .ngx-pagination .pagination-previous {
+  color: #605cca;
+  font-weight: 600;
+}
+.custom-pagination ::ng-deep .ngx-pagination .pagination-previous.disabled {
+  color: #838383;
+}
+.custom-pagination ::ng-deep .ngx-pagination .pagination-next {
+  color: #605cca;
+  font-weight: 600;
+}
+.custom-pagination ::ng-deep .ngx-pagination .pagination-next.disabled {
+  color: #838383;
+}
+.custom-pagination ::ng-deep .ngx-pagination {
+  padding-left: 0px;
+}

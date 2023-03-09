@@ -1,0 +1,86 @@
+<div class="container">
+  <h2 class="mb-5" *ngIf="!actualizar">Nuevo Usuario</h2>
+  <h2 class="mb-5" *ngIf="actualizar">Actualizar Usuario</h2>
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre Usuario</label>
+      <input
+        type="text"
+        formControlName="first_name"
+        class="form-control"
+        id="nombre"
+      />
+      <span *ngIf="checkCampo('first_name', 'required')" class="alerta"
+        >Debe rellenar este campo</span
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido Usuario</label>
+      <input
+        type="text"
+        formControlName="last_name"
+        class="form-control"
+        id="apellido"
+      />
+      <span *ngIf="checkCampo('last_name', 'required')" class="alerta"
+        >Debe rellenar este campo</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Usuario</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="email"
+      />
+      <span *ngIf="checkCampo('email', 'required')" class="alerta"
+        >Debe rellenar este campo</span
+      >
+      <span *ngIf="checkCampo('email', 'pattern')" class="alerta"
+        >Introduzca un email válido</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="imagen" class="form-label">Imagen Usuario</label>
+      <input
+        type="text"
+        formControlName="image"
+        class="form-control"
+        id="imagen"
+      />
+      <span *ngIf="checkCampo('image', 'required')" class="alerta"
+        >Debe rellenar este campo</span
+      >
+      <span *ngIf="checkCampo('image', 'pattern')" class="alerta"
+        >Introduzca una URL válida</span
+      >
+    </div>
+    <div class="d-flex gap-2 justify-content-end mt-4">
+      <button
+        *ngIf="!actualizar"
+        [disabled]="form.invalid"
+        type="submit"
+        class="btn btn-act btn-block mb-4"
+      >
+        Guardar
+      </button>
+      <button
+        *ngIf="actualizar"
+        [disabled]="form.invalid"
+        type="submit"
+        class="btn btn-act btn-block mb-4"
+      >
+        Actualizar
+      </button>
+      <button
+        type="button"
+        class="btn btn-dell btn-block mb-4"
+        (click)="regresar()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

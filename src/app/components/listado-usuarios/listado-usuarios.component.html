@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-5 mb-5">
+    <div
+      class="col mb-5"
+      *ngFor="
+        let usuario of usuarios
+          | paginate : { itemsPerPage: pageSize, currentPage: currentPage }
+      "
+    >
+      <app-usuario-card [usuario]="usuario"></app-usuario-card>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      class="custom-pagination"
+      (pageChange)="pageChanged($event)"
+      [maxSize]="5"
+    ></pagination-controls>
+  </div>
+</div>

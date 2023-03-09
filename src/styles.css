@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 100px auto 20px auto;
+  max-height: 60%;
+}
+body {
+  min-height: calc(100vh - 50px);
+}

@@ -1,0 +1,48 @@
+<section
+  class="container d-flex justify-content-center"
+  *ngIf="usuario != null"
+>
+  <div class="wrapper-card">
+    <div class="img-news">
+      <img class="imagen" [src]="usuario?.image" [alt]="usuario?.first_name" />
+    </div>
+    <div
+      class="description mt-5 mb-5 d-flex justify-content-center flex-column"
+    >
+      <div>
+        <h2 class="text-decoration-underline">
+          {{ usuario?.first_name }} {{ usuario?.last_name }}
+        </h2>
+      </div>
+      <div>
+        <h5 class="mt-4 fw-bold">
+          Correo: <small> {{ usuario?.email }}</small>
+        </h5>
+        <h5 class="mb-5 fw-bold">
+          Nombre Usuario: <small> {{ usuario?.username }}</small>
+        </h5>
+      </div>
+
+      <div class="d-flex justify-content-start gap-4">
+        <div class="d-flex flex-column align-content-center">
+          <a type="button" class="btn btn-ver opciones" (click)="regresar()"
+            ><i class="fa-solid fa-lg fa-reply"></i> Regresar</a
+          >
+        </div>
+        <div class="d-flex flex-column align-content-center">
+          <a type="button" class="btn btn-act opciones" (click)="actualizar()"
+            ><i class="fa-solid fa-lg fa-rotate"></i> Actualizar</a
+          >
+        </div>
+        <div class="d-flex flex-column align-content-center">
+          <a
+            type="button"
+            class="btn btn-dell opciones"
+            (click)="eliminarUser()"
+            ><i class="fa-regular fa-lg fa-trash-can"></i> Eliminar</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
